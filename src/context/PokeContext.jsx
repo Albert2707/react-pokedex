@@ -13,15 +13,23 @@ export const usePokemons = () => {
 const PokeContext = ({ children }) => {
   const [pokemons, setPokemons] = useState([]);
 
-  const getPoke = async (offset, limit) => {
+const getOnePokemon =(id)=>{
+  //const onePokemon = pokemons.find(pokemon=>pokemon.id===id);
+  const onePokemon = pokemons.find(poke => poke.id === id);
+  console.log(onePokemon)
+    return onePokemon
 
- const response= await getPokemons(offset, limit)
- setPokemons(response.map(e => e.data ));
+
+}
+
+  const getPoke = async (offset, limit) => {
+    const response = await getPokemons(offset, limit);
+    setPokemons(response.map((e) => e.data));
     //console.log(data.sprites.front_default)
   };
 
   return (
-    <PokedexContext.Provider value={{ pokemons, getPoke }}>
+    <PokedexContext.Provider value={{ pokemons, getPoke,getOnePokemon }}>
       {children}
     </PokedexContext.Provider>
   );

@@ -8,11 +8,16 @@ const Content = () => {
   let [currentPage, setCurrentPage] = useState(20);
   let [offset, setOffset] = useState(1);
   let [limit, setLimit] = useState(19);
-  const { pokemons, getPoke } = usePokemons();
+  const { pokemons, getPoke,getOnePokemon } = usePokemons();
   useEffect(() => {
     getPoke(offset, limit);
-    console.log(offset);
-  }, [offset]);
+    //console.log(offset);
+  },[offset]);
+
+const getPokemon= (e)=>{
+    console.log(e.target.value)
+}
+
   return (
     <div className="w-full pb-14  flex  px-24">
                 <button disabled={offset <=1 ? true :false}

@@ -14,7 +14,6 @@ return await axios.get('https://pokeapi.co/api/v2/pokemon/'+id+'/')
 
 
 
-
 export const getPokemons = async (offset, limit) => {
   let pokemones=[];
   for (let i = offset; i <= offset + limit; i++) {

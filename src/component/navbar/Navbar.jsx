@@ -6,7 +6,7 @@ const Navbar = () => {
   const { darkMode, toggle } = useContext(DarkModeContext);
 
   return (
-    <div className="flex justify-center items-center p-5 sticky top-0 z-50 bg-white border-b-[1px] border-gray-300 dark:border-[#444] dark:bg-[#1b1c1e] ">
+    <div className="flex justify-center items-center p-2 md:p-3 lg:p-5 sticky top-0 z-50 bg-white border-b-[1px] border-gray-300 dark:border-[#444] dark:bg-[#1b1c1e] ">
 <div className="logo  flex flex-grow justify-center">
 <img className="h-16 md:h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/2560px-International_Pok%C3%A9mon_logo.svg.png" alt="" />
 </div>
