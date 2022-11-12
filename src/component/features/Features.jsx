@@ -4,8 +4,8 @@ import { usePokemons } from "../../context/PokeContext.jsx";
 const Features = ({ setopenFeatures, onePokemon }) => {
   return (
     <div className="fixed  bg-[#222]/50 inset-0 z-50 pt-5">
-      <img className="absolute z-10 inset-x-0 top-28 md:top-10 lg:top-10 h-40 md:h-60 mx-auto" src={onePokemon.sprites.other.dream_world.front_default} alt="" />
-      <div className="flex flex-col gap-5 items-center justify-center bg-white dark:bg-[#1b1c1e]  absolute inset-0 w-[80%] md:w-[50%] lg:w-1/2 xl:w-[30%] px-24  h-min m-auto py-14 rounded-xl">
+      <img className="absolute z-10 inset-x-0 top-24 sm:top-28 md:top-10 lg:top-10 h-40 md:h-60 mx-auto" src={onePokemon.sprites.other.dream_world.front_default} alt="" />
+      <div className="flex flex-col gap-5 items-center justify-center bg-white dark:bg-[#1b1c1e]  absolute inset-0 w-[90%] sm:w-[80%] md:w-[50%] lg:w-1/2 xl:w-[30%] px-24  h-min m-auto py-14 rounded-xl">
         <button
           className="absolute top-5 right-5"
           onClick={() => {
@@ -20,9 +20,9 @@ const Features = ({ setopenFeatures, onePokemon }) => {
 
 <div className="w-full flex flex-col gap-5">
 
-        <span className="text-xl  font-medium"> <span className="text-xl md:text-2xl">Name:</span> &nbsp;  {onePokemon.name}</span>
-        <span className="flex text-xl  text-center items-center"> <span className="text-xl md:text-2xl font-medium self-center ">Habilidad1: &nbsp;  </span> {onePokemon.abilities[0].ability.name}</span>
-        <span className="flex text-xl   text-center items-center"> <span className="text-xl md:text-2xl font-medium ">Habilidad2: &nbsp;</span> {onePokemon.abilities[1].ability.name}</span>
+        <span className="text-lg sm:text-xl  font-medium"> <span className="text-lg sm:text-xl md:text-2xl">Name:</span> &nbsp;  {onePokemon.name}</span>
+        <span className="flex text-base sm:text-xl  text-center items-center"> <span className="text-lg sm:text-xl md:text-2xl font-medium items-center ">Habilidad1: &nbsp;  </span> {onePokemon.abilities[0].ability.name}</span>
+        <span className="flex text-base sm:text-xl   text-center items-center"> <span className="text-lg sm:text-xl md:text-2xl font-medium ">Habilidad2: &nbsp;</span> {onePokemon.abilities[1].ability.name}</span>
 
 </div>
         <div className="flex flex-col w-full items-center ">
