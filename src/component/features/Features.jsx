@@ -6,7 +6,7 @@ const Features = ({ setopenFeatures, onePokemon }) => {
     <div className="fixed  bg-[#222]/50 inset-0 z-50 pt-5">
 
       <div className="flex flex-col gap-5 items-center justify-center bg-white dark:bg-[#1b1c1e]  absolute inset-0 w-[90%] sm:w-[80%] md:w-[50%] lg:w-1/2 xl:w-[30%] px-24  h-min m-auto py-14 rounded-xl ">
-      <img className="absolute z-10 inset-x-0 left-1/2  top-0 object-cover" src={onePokemon.sprites.other.dream_world.front_default} alt="" />
+      <img className="absolute z-10 inset-0 -top-32 md:-top-48 mx-auto h-40 md:h-60   object-cover" src={onePokemon.sprites.other.dream_world.front_default} alt="" />
         <button
           className="absolute top-5 right-5"
           onClick={() => {
