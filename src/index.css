@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;  
+
+*::-webkit-scrollbar {
+    display: none;
+  }
+  
+.flex-5{
+    flex:5
+}
