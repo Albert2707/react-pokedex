@@ -63,10 +63,10 @@ const Content = () => {
       <div className="grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-5  w-full ">
         {isLoading ? (
           <div className="flex items-center justify-center col-span-full">
-            <div class="flex gap-1">
-              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_0.9s_infinite_100ms]"></span>
-              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-bounce "></span>
-              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_1s_infinite_100ms]"></span>
+            <div className="flex gap-1">
+              <span className="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_0.9s_infinite_100ms]"></span>
+              <span className="h-6 w-6 rounded-full bg-indigo-400 animate-bounce "></span>
+              <span className="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_1s_infinite_100ms]"></span>
             </div>
           </div>
         ) : (
