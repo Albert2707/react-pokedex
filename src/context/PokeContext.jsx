@@ -1,5 +1,6 @@
 import { useContext, createContext, useState } from "react";
 import { getPokemons } from "../api/getPokemons.jsx";
+import { useQuery } from "@tanstack/react-query";
 
 export const PokedexContext = createContext();
 export const usePokemons = () => {
@@ -21,10 +22,11 @@ const getOnePokemon =(id)=>{
 
 
 }
-
   const getPoke = async (offset, limit) => {
+
     const response = await getPokemons(offset, limit);
     setPokemons(response.map((e) => e.data));
+return response;
     //console.log(data.sprites.front_default)
   };
 

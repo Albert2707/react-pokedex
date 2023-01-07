@@ -3,15 +3,19 @@ import { usePokemons } from "../../context/PokeContext.jsx";
 import ChevronLeftOutlinedIcon from "@mui/icons-material/ChevronLeftOutlined";
 import KeyboardArrowRightOutlinedIcon from "@mui/icons-material/KeyboardArrowRightOutlined";
 import Pokemon from "../pokemon/Pokemon.jsx";
-
+import { useQuery } from "@tanstack/react-query";
 const Content = () => {
-  let [currentPage, setCurrentPage] = useState(20);
   let [offset, setOffset] = useState(1);
+  const [loader, setLoader] = useState(false);
   let [limit, setLimit] = useState(19);
   const { pokemons, getPoke, getOnePokemon } = usePokemons();
+  const [pokemones, setPokemones] = useState([]);
+
+  const { isLoading, data, refetch, error } = useQuery(["pokemones"], () =>
+    getPoke(offset, limit)
+  );
   useEffect(() => {
-    getPoke(offset, limit);
-    //console.log(offset);
+    refetch();
   }, [offset]);
 
   const getPokemon = (e) => {
@@ -57,11 +61,21 @@ const Content = () => {
       </button>
 
       <div className="grid grid-cols-1 md:grid-cols-3  lg:grid-cols-4 gap-5  w-full ">
-        {pokemons.map((poke, index) => (
-          <div key={index + 1}>
-            <Pokemon pokemon={poke} />
+        {isLoading ? (
+          <div className="flex items-center justify-center col-span-full">
+            <div class="flex gap-1">
+              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_0.9s_infinite_100ms]"></span>
+              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-bounce "></span>
+              <span class="h-6 w-6 rounded-full bg-indigo-400 animate-[bounce_1s_infinite_100ms]"></span>
+            </div>
           </div>
-        ))}
+        ) : (
+          pokemons.map((poke, index) => (
+            <div key={index + 1}>
+              <Pokemon pokemon={poke} />
+            </div>
+          ))
+        )}
       </div>
 
       <button
